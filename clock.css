@@ -1,0 +1,47 @@
+.box {
+  height: 500px;
+  width: 500px;
+  border: 5px solid;
+  border-radius:26%;
+  background-image: url('oscillator_pendulum_trajectory.gif');
+  background-size: cover;      /* Make the background cover the whole box */
+
+  display: flex;
+  flex-direction: column;         /* ⬇️ Stack items vertically */
+  justify-content: space-between; /* 🟰 Clock at top, Greeting at bottom */
+  align-items: center;            /* ⬅️➡️ Center both horizontally */
+  padding: 20px; /* Optional: spacing inside the box */
+}
+.clock {
+  height: 150px;
+  width: 150px;
+  background-color: crimson;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid rgb(17, 230, 17);
+  border-radius: 100px;
+  font-size: 18px;
+}
+.Greeting {
+  height: 40px;
+  width: 300px;
+  background-color: rgb(30, 223, 20);
+  color: rgb(243, 16, 129);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  transition: all 90s 2 1.5s;
+}
+.Greeting:hover {
+  width:330px;
+  color: rgb(23, 8, 236);
+  background-color: rgb(222, 74, 145);
+  text-transform: uppercase;
+}
+.Greeting:active {
+  color: rgb(253, 81, 7);
+  background-color: rgb(200, 207, 71);
+}
