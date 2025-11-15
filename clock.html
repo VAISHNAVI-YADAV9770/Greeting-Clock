@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Greeting clock</title>
+    <link rel="stylesheet" href="clock.css" />
+  </head>
+ <body> <!-- onclick="document.getElementById('bell').play().then(s => { this.onclick=null })"--> 
+    <div class="box" > 
+    <div class="clock"></div>
+    <div class="Greeting"></div>
+    
+    <audio src="clockHourBell.mp3" id="bell" preload="auto"></audio>
+     
+    <script>
+    
+  //  function PlayHourBell(){
+  //  const sound = document.getElementById('bell');
+  //  sound.volume = 1.0; // full volume
+
+  //  sound.play();
+  // }
+  // let soundEnabled = true; // sound gets enabled on first click
+
+  //   function PlayHourBell() {
+  //     if (soundEnabled) {
+  //       document.getElementById("bell").play();
+  //     }
+  //   }
+
+
+   function updateGreetingClock(){ 
+    let Time = new Date();
+    let hour = Time.getHours();
+   
+    let minute = Time.getMinutes();
+    let second = Time.getSeconds();
+
+document.querySelector(".clock").innerText = Time.toLocaleTimeString(); // Show time in readable format
+
+if (hour >= 4 && hour < 12) {
+  document.querySelector(".Greeting").innerText =
+    "Good Morning 🌄🌞💛🌈🌷🫶😊🌸";
+} else if (hour >= 12 && hour < 17) {
+  document.querySelector(".Greeting").innerText =
+    "Good Afternoon 🌇💖🫶🌺😘🍹🍫🌞";
+} else if (hour >= 17 && hour < 19) {
+  document.querySelector(".Greeting").innerText =
+    "Good Evening 💖🕯️🍷🍽️🥰✨🫶";
+} else {
+  document.querySelector(".Greeting").innerText =
+    "Good Night 🌙✨💤💖😚🌟😴";
+}
+
+
+//  if (minute ===26 || second==0) {
+//   let repeat = hour;
+//   let count = 0;
+
+//   function ringBellRepeatedly() {
+//     if (count < repeat) {
+//       PlayHourBell();
+//       count++;
+//       setTimeout(ringBellRepeatedly, 2000); // 2 sec delay between rings
+//     }
+//   }
+
+//   ringBellRepeatedly();
+// }
+
+}
+
+   updateGreetingClock();
+
+   setInterval(updateGreetingClock,1000);
+
+    </script>
+  </body>
+</html>
